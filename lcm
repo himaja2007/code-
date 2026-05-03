@@ -1,1 +1,8 @@
-
+n=int(input())
+m=int(input())
+a,b=n,m
+while b!=0:
+    a,b=b,a%b
+gcd=a
+lcm=n*m//gcd
+print("lcm",lcm)    
