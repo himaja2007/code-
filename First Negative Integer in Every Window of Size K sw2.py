@@ -1,0 +1,23 @@
+arr=list(map(int,input().split()))
+k=int(input())
+left=0
+right=0
+neg=[]
+ans=[]
+n=len(arr)
+while(right<n):
+    if(arr[right]<0):
+        neg.append(arr[right])
+    if(right-left+1<k):
+        right+=1
+    elif(right-left+1==k):
+        if(len(neg)==0):
+            ans.append(0)
+        else:
+            ans.append(neg[0])
+        if(arr[left]<=0):
+            neg.pop(0)
+        left+=1
+        right+=1
+print(ans)            
+
